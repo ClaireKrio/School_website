@@ -1,0 +1,107 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Contact Us</h1>
+
+    <!-- Contact Information -->
+    <section class="contact-information mt-5">
+        <h2>Contact Information</h2>
+        <p>If you have any questions, please feel free to contact us through any of the following methods:</p>
+        <ul>
+            <li><strong>Phone:</strong> (123) 456-7890</li>
+            <li><strong>Email:</strong> <a href="Wang'urugirls@gmail.com">info@school.com</a></li>
+            <li><strong>Address:</strong> Wang'uru Girls, Education City, ABC 12345</li>
+        </ul>
+    </section>
+
+    <!-- Staff Directory -->
+    <section class="staff-directory mt-5">
+        <h2>Staff Directory</h2>
+        <p>Below is a comprehensive list of our staff members and their contact details:</p>
+        <div class="accordion" id="staffDirectoryAccordion">
+            <div class="card">
+                <div class="card-header" id="staffHeadingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#staffCollapseOne" aria-expanded="true" aria-controls="staffCollapseOne">
+                            Administration
+                        </button>
+                    </h2>
+                </div>
+                <div id="staffCollapseOne" class="collapse show" aria-labelledby="staffHeadingOne" data-parent="#staffDirectoryAccordion">
+                    <div class="card-body">
+                        <ul>
+                            <li><strong>Principal:</strong> John Doe - <a href="mailto:johndoe@school.com">johndoe@school.com</a></li>
+                            <li><strong>Vice Principal:</strong> Jane Smith - <a href="mailto:janesmith@school.com">janesmith@school.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="staffHeadingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#staffCollapseTwo" aria-expanded="false" aria-controls="staffCollapseTwo">
+                            Teaching Staff
+                        </button>
+                    </h2>
+                </div>
+                <div id="staffCollapseTwo" class="collapse" aria-labelledby="staffHeadingTwo" data-parent="#staffDirectoryAccordion">
+                    <div class="card-body">
+                        <ul>
+                            <li><strong>Math Teacher:</strong> Emily White - <a href="mailto:emilywhite@school.com">emilywhite@school.com</a></li>
+                            <li><strong>Science Teacher:</strong> Alan Brown - <a href="mailto:alanbrown@school.com">alanbrown@school.com</a></li>
+                            <li><strong>English Teacher:</strong> Linda Green - <a href="mailto:lindagreen@school.com">lindagreen@school.com</a></li>
+                            <!-- Add more teaching staff as needed -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="staffHeadingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#staffCollapseThree" aria-expanded="false" aria-controls="staffCollapseThree">
+                            Support Staff
+                        </button>
+                    </h2>
+                </div>
+                <div id="staffCollapseThree" class="collapse" aria-labelledby="staffHeadingThree" data-parent="#staffDirectoryAccordion">
+                    <div class="card-body">
+                        <ul>
+                            <li><strong>Counselor:</strong> Sarah Johnson - <a href="mailto:sarahjohnson@school.com">sarahjohnson@school.com</a></li>
+                            <li><strong>Health Services:</strong> Michael Lee - <a href="mailto:michaellee@school.com">michaellee@school.com</a></li>
+                            <!-- Add more support staff as needed -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more staff categories as needed -->
+        </div>
+    </section>
+
+    <!-- Feedback & Inquiries -->
+    <section class="feedback-inquiries mt-5">
+        <h2>Feedback & Inquiries</h2>
+        <p>We welcome your feedback and inquiries. Please use the form below to submit your questions, feedback, or concerns:</p>
+        <form method="post" action="{% url 'feedback_submit' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </section>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+{% endblock %}

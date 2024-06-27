@@ -1,0 +1,56 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Admissions</h1>
+
+    <!-- Admission Information -->
+    <section class="admission-information mt-5">
+        <h2>Admission Information</h2>
+        <p>Welcome to the admissions section. We are excited to have you consider joining our school. Here you will find all the information you need to apply and join our community.</p>
+        <h3>Application Process</h3>
+        <p>Our application process is simple and straightforward. Follow these steps to apply:</p>
+        <ul>
+            <li><strong>Step 1:</strong> Complete the online application form available on our website.</li>
+            <li><strong>Step 2:</strong> Submit the required documents, including previous academic records, birth certificate, and proof of residence.</li>
+            <li><strong>Step 3:</strong> Schedule an interview with our admissions office. The interview can be conducted in person or virtually.</li>
+            <li><strong>Step 4:</strong> Wait for the admission decision, which will be communicated via email.</li>
+            <li><strong>Step 5:</strong> Upon acceptance, complete the enrollment process by paying the admission fee and submitting the necessary forms.</li>
+        </ul>
+    </section>
+
+    <!-- New Intake Progress -->
+    <section class="new-intake-progress mt-5">
+        <h2>New Intake Progress</h2>
+        <p>We are currently in the process of reviewing applications for the upcoming academic year. Here is the timeline for the new intake:</p>
+        <ul>
+            <li><strong>Application Deadline:</strong> June 30, 2024</li>
+            <li><strong>Interviews:</strong> July 1 - July 15, 2024</li>
+            <li><strong>Admission Decisions:</strong> July 20, 2024</li>
+            <li><strong>Enrollment Deadline:</strong> August 1, 2024</li>
+            <li><strong>Orientation:</strong> August 10, 2024</li>
+            <li><strong>First Day of School:</strong> August 15, 2024</li>
+        </ul>
+        <p>Please ensure that you complete all steps by the specified deadlines to secure your place in the new intake.</p>
+    </section>
+
+    <!-- Accessing the Student Portal -->
+    <section class="student-portal-access mt-5">
+        <h2>Accessing the Student Portal</h2>
+        <p>Once you have been accepted and enrolled, you will have access to the student portal. The student portal is a one-stop destination for all your academic needs, including viewing grades, managing your schedule, and communicating with faculty.</p>
+        <h3>How to Access the Student Portal</h3>
+        <p>Follow these steps to log in to the student portal:</p>
+        <ul>
+            <li><strong>Step 1:</strong> Visit the student portal login page at <a href="{% url 'login' %}">Student Portal Login</a>.</li>
+            <li><strong>Step 2:</strong> Enter your username and password, which were provided during the enrollment process.</li>
+            <li><strong>Step 3:</strong> Click the "Login" button to access your personal dashboard.</li>
+            <li><strong>Step 4:</strong> If you encounter any issues, please contact the IT support team at <a href="mailto:itsupport@school.com">itsupport@school.com</a>.</li>
+        </ul>
+        <p>If you have not yet received your login credentials, please check your email for the enrollment confirmation or contact the admissions office for assistance.</p>
+    </section>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+{% endblock %}

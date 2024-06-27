@@ -1,0 +1,104 @@
+<!-- templates/accounts/admission_letter.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Letter</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+        .card-header {
+            text-align: center;
+        }
+        .card-body {
+            font-size: 16px;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h2>Wang'uru Girls High School</h2>
+            <p>Ngurubani, Mwea, Wang'uru</p>
+        </div>
+        <div class="card-body">
+            <h4>Admission Letter</h4>
+            <p>Dear {{ user.first_name }} {{ user.last_name }},</p>
+            <p>We are pleased to inform you that you have been admitted to Wang'uru Girls High School.</p>
+            <p><strong>Admission Date:</strong> {{ admission_date }}</p>
+            <h5>Fees Structure</h5>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Term</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Term 1</td>
+                        <td>{{ fees_structure.term_1 }}</td>
+                    </tr>
+                    <tr>
+                        <td>Term 2</td>
+                        <td>{{ fees_structure.term_2 }}</td>
+                    </tr>
+                    <tr>
+                        <td>Term 3</td>
+                        <td>{{ fees_structure.term_3 }}</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>{{ fees_structure.total }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>Conditions</h5>
+            <p>
+                (a) Your acceptance to pay the required fees as per the fee structure. The annual fee is Kshs. 30,660 paid in two semesters as captured in the table above.<br>
+                (b) Your agreement to adhere to the Rules and Regulations Governing the Conduct and Discipline of Students of Wang'uru Girls High School.<br>
+                (c) Production of Original Certificates on the day of registration for verification purposes.<br>
+                (d) Production of NHIF card original & photocopy or if you are under 18 years, your parent's NHIF card original & photocopy.
+            </p>
+            <p>
+                Please note that fees are payable at the beginning of every year. No student shall be registered in the school without paying fees. Students are required to pay fees by Banker's Cheque or deposit into the school account at any branch of our official bank countrywide, namely:
+                <ul>
+                    <li>National Bank of Kenya Ltd, Eldoret - A/c No. 01201273342500</li>
+                    <li>KCB, Uganda Road Branch, Eldoret - A/c No. 1126787049</li>
+                    <li>Equity Bank, Eldoret Branch - A/c No. 0300297338822</li>
+                    <li>Cooperative Bank of Kenya, Eldoret Branch - A/c No. 01129183710000</li>
+                </ul>
+                Ensure to quote Student Name and Admission Number on the banking slip. The banker's cheque or banking slip should be submitted on the reporting day alongside other documents indicated herein. The school does not accept Personal Cheques, Money Orders, Postal Orders or Cash.
+            </p>
+            <p>
+                Please note that admission to this school does not automatically guarantee you a place in the halls of Residence. There are limited rooms in halls of residence which will be allocated based on full payment of fees. The allocation will be based on first paid first served. If you are not offered a place in the Halls of Residence, you will be required to make your own private arrangements. In addition, you will also be required to make arrangements for your subsistence while studying at the school.
+            </p>
+            <p>
+                If you accept admission under these conditions, you are requested to sign the enclosed form. In case you are unable to accept this offer, kindly complete the form and return it to the school on the reporting date. Please note that this admission letter is an important document that should be kept safely throughout your stay in the school.
+            </p>
+            <p>
+                Follow the link <a href="https://www.wangurugirls.ac.ke/admissions-downloads">http://www.wangurugirls.ac.ke/admissions-downloads</a> to download fee structure, the forms mentioned above, rules and regulations. Access <a href="http://support.wangurugirls.ac.ke/admissions/">http://support.wangurugirls.ac.ke/admissions/</a> and fill the online student details form.
+            </p>
+            <p>
+                Please be informed that there may be fraudsters purporting to be in a position to help.
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

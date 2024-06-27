@@ -1,0 +1,49 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">Student Portal Sign Up</h2>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                {{ profile_form.full_name.label_tag }}
+                {{ profile_form.full_name }}
+            </div>
+            <div class="col-md-6 mb-3">
+                {{ user_form.kcpe_index_number.label_tag }}
+                {{ user_form.kcpe_index_number }}
+            </div>
+            <div class="col-md-6 mb-3">
+                {{ user_form.year_of_joining.label_tag }}
+                {{ user_form.year_of_joining }}
+            </div>
+            <div class="col-md-6 mb-3">
+                {{ user_form.username.label_tag }}
+                {{ user_form.username }}
+            </div>
+            <div class="col-md-6 mb-3">
+                {{ user_form.password1.label_tag }}
+                {{ user_form.password1 }}
+            </div>
+            <div class="col-md-6 mb-3">
+                {{ user_form.password2.label_tag }}
+                {{ user_form.password2 }}
+            </div>
+            <div class="col-md-6 mb-3">
+                {{ profile_form.profile_image.label_tag }}
+                {{ profile_form.profile_image }}
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-sm">Sign Up</button>
+        </div>
+    </form>
+    <p class="text-center mt-3">Already have an account? <a href="{% url 'signin' %}">Login</a></p>
+</div>
+{% endblock %}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Site{% endblock %}</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="{% url 'home' %}">Wang'uru Girls High School</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'academics' %}">Academics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'student_life' %}">Life As A Student</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'news_events' %}">News_events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'admissions' %}">Admission For the form ones</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}">Student Portal</a>
+                </li>
+                                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'signin' %}">Login</a>
+                        </li>
+
+
+{#                    {% if user.is_authenticated %}#}
+{#                        <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>#}
+{#                    {% else %}#}
+{#                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>#}
+{#                        <li class="nav-item"><a class="nav-link" href="{% url 'signin' %}">Student Portal login</a></li>#}
+{#                    {% endif %}#}
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="social-media">
+                <a href="https://wa.me/your_number" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/your_profile" class="instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/your_page" class="facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+            <section class="info_section  layout_padding2-top">
+    <div class="social_container">
+      <div class="social_box">
+        <a href="">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+        </a>
+        <a href="">
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+        </a>
+        <a href="">
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="">
+          <i class="fa fa-youtube" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+    <div class="info_container ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3">
+            <h6>
+              ABOUT US
+            </h6>
+            <p>
+                We are located behind mwea town near mwea police station
+            </p>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="info_form ">
+              <h5>
+                Newsletter
+              </h5>
+              <form action="#">
+                <input type="email" placeholder="Enter your email">
+                <button>
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
+
+              <div class="col-md-6 col-lg-3">
+            <h6>
+              NEED HELP
+            </h6>
+            <p>
+                Incase you get lost you can call our agents
+                +254759058150
+            </p>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <h6>
+              CONTACT US
+            </h6>
+            <div class="info_link-box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span> Ngurubani,Mwea,Kirinyaga,Kenya </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>+25404467375</span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span> Wang,urugirls@gmail.com</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 My Site</p>
+            <p> &copy; <span id="displayYear"></span> All Rights Reserved By
+          <a href="https://html.design/">Developer Claire Nyambura/a>
+            </p>
+        </div>
+    </footer>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

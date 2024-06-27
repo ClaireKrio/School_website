@@ -1,0 +1,20 @@
+<!-- templates/accounts/profile.html -->
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">Profile</h2>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ profile.Full_name}}</h5>
+            <p class="card-text"><strong>KCPE Marks:</strong> {{ profile.kcpe_marks }}</p>
+            <p><strong>Email:</strong> {{ profile.user.email }}</p>
+            <p><strong>Year of Joining:</strong> {{ profile.user.year_of_joining }}</p>
+            <p><strong>KCPE Results:</strong> {{ profile.user.kcpe_results }}</p>
+            <p><strong>KCPE Index Number:</strong> {{ profile.user.kcpe_index_number }}</p>
+            <p><strong>Former Primary School:</strong> {{ profile.user.former_primary_school }}</p>
+            <a href="{% url 'admission_letter' %}" class="btn btn-primary">View Admission Letter</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
